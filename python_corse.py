@@ -16,6 +16,7 @@ print(region_totals.sort_values('individuals', ascending=False))
 # Plot total homeless individuals by region
 region_totals['individuals'].plot(kind='bar', title='Total Homeless Individuals by Region')
 plt.ylabel('Number of Individuals')
+plt.savefig('charts/homeless_individuals_by_region.png', bbox_inches='tight')
 plt.show()
 
 # Calculate homelessness rate per 10,000 people in each state
@@ -33,6 +34,7 @@ plt.barh(top_states['state'], top_states['homeless_rate_per_10k'], color='skyblu
 plt.xlabel('Homelessness Rate per 10,000 People')
 plt.title('Top 10 States by Homelessness Rate per 10,000 People')
 plt.gca().invert_yaxis()  # Highest rate at the top
+plt.savefig('charts/homelessness_rate_per_10,000_people_by_state.png', bbox_inches='tight')
 plt.show()
 
 # Calculate the proportion of family homelessness in each state
@@ -49,6 +51,7 @@ plt.barh(top_family_states['state'], top_family_states['family_homeless_pct'], c
 plt.xlabel('Family Homelessness (% of Total)')
 plt.title('Top 10 States by Family Homelessness Proportion')
 plt.gca().invert_yaxis()
+plt.savefig('charts/top_10_states_by_family_homelessness_proportion.png', bbox_inches='tight')
 plt.show()
 
 # Calculate total homeless and population by region
@@ -70,6 +73,7 @@ plt.figure(figsize=(8, 5))
 region_stats['homeless_rate_per_10k'].sort_values(ascending=False).plot(kind='bar', color='purple')
 plt.ylabel('Homelessness Rate per 10,000 People')
 plt.title('Homelessness Rate per 10,000 People by Region')
+plt.savefig('charts/homelessness_per_region.png', bbox_inches='tight')
 plt.show()
 
 # Top 5 states with highest homelessness rates
@@ -88,6 +92,7 @@ plt.barh(top5_states['state'], top5_states['homeless_rate_per_10k'], color='red'
 plt.xlabel('Homelessness Rate per 10,000 People')
 plt.title('Top 5 States by Homelessness Rate per 10,000 People')
 plt.gca().invert_yaxis()
+plt.savefig('charts/5_states_by_homelessness_rate_per_10,000_people.png', bbox_inches='tight')
 plt.show()
 
 # Plot bottom 5 states by homelessness rate per 10,000 people
@@ -105,6 +110,7 @@ region_totals['individuals'].plot(kind='bar', title='Total Homeless Individuals 
 plt.ylabel('Number of Individuals')
 plt.xlabel('Region')
 plt.tight_layout()
+plt.savefig('charts/homeless_individuals_by_region.png', bbox_inches='tight')
 plt.show()
 
 # Bar chart: Top 10 states by total homeless individuals
@@ -114,4 +120,5 @@ top10_states['individuals'].plot(kind='bar', title='Top 10 States by Total Homel
 plt.ylabel('Number of Individuals')
 plt.xlabel('State')
 plt.tight_layout()
+plt.savefig('charts/Top_10_states_by_total_homeless_individuals.png', bbox_inches='tight')
 plt.show()
